@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: 'Manrope', system-ui, sans-serif; }
+  :focus-visible { outline: 2px solid #2a9a60; outline-offset: 2px; }
+}
+
+@layer components {
+  .card { @apply rounded-xl border border-slate-200 bg-white; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-ghost { @apply btn px-2 py-1.5 text-slate-600 hover:bg-slate-100; }
+  .input { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200 disabled:bg-slate-100; }
+  .label { @apply mb-1 block text-sm font-medium text-slate-700; }
+  .th { @apply whitespace-nowrap px-4 py-2.5 text-left text-xs font-semibold text-slate-500; }
+  .td { @apply px-4 py-3 text-sm; }
+}
+
+/* Leaflet vehicle markers */
+.vp-pin { position: relative; width: 18px; height: 18px; }
+.vp-pin i { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--c); border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45); }
+.vp-pin b { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); white-space: nowrap; background: #fff; color: #0f3d29; font: 700 11px/1 Manrope, sans-serif; padding: 3px 6px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.vp-pin.sel i { outline: 3px solid var(--c); outline-offset: 2px; }
+.vp-pin.stale i { border-style: dashed; border-color: #f59e0b; }
+.vp-dot { width: 14px; height: 14px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45); background: var(--c); }
+.leaflet-container { font-family: 'Manrope', system-ui, sans-serif; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

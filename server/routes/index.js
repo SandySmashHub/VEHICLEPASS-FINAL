@@ -1,0 +1,24 @@
+import { Router } from 'express';
+import auth from './authRoutes.js';
+import users from './userRoutes.js';
+import vehicles from './vehicleRoutes.js';
+import entries from './entryRoutes.js';
+import tracking from './trackingRoutes.js';
+import geofences from './geofenceRoutes.js';
+import alerts from './alertRoutes.js';
+import dashboard from './dashboardRoutes.js';
+import reports from './reportRoutes.js';
+import settings from './settingsRoutes.js';
+
+const router = Router();
+router.use('/auth', auth);
+router.use('/users', users);
+router.use('/vehicles', vehicles);
+router.use('/entries', entries);
+router.use('/tracking', tracking);
+router.use('/geofences', geofences);
+router.use('/alerts', alerts);
+router.use('/dashboard', dashboard);
+router.use('/reports', reports);
+router.use('/settings', settings);
+export default router;
